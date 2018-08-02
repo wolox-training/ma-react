@@ -1,0 +1,20 @@
+.title-container {
+  display: flex;
+  align-items: center;
+  left: 100px;
+  position: relative;
+  top: 100px;
+  
+  .title-image {
+    height: 200px;
+    width: 150px;
+  }
+
+  .title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 40px;
+    left: -35px;
+    position: relative;
+    top: 8px;
+  }
+}
