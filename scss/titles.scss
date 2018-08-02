@@ -3,7 +3,6 @@
   align-items: center;
   left: 100px;
   position: relative;
-  top: 100px;
   
   .title-image {
     height: 200px;
@@ -17,4 +16,12 @@
     position: relative;
     top: 8px;
   }
+}
+
+.title-front {
+  top: 100px;
+}
+
+.title-back {
+  top: 300px;
 }
