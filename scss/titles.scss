@@ -1,38 +1,23 @@
-.title-container {
+.title {
   align-items: center;
   display: flex;
-  left: 100px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 40px;
+  padding-left: 115px;
+  padding-top: 87px;
   position: relative;
-  
-  .title {
-    align-items: center;
-    display: flex;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 40px;
-    padding-left: 115px;
-    padding-top: 87px;
-    position: relative;
-    top: 8px;
-  }
-
-  .title::before {
-    background-image: url('triangle.svg');
-    background-repeat: no-repeat;
-    background-size: 150px 200px;
-    content: '';
-    height: 200px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 150px;
-    z-index: -1;
-  }
+  top: 8px;
 }
 
-.title-front {
-  top: 100px;
-}
-
-.title-back {
-  top: 300px;
+.title::before {
+  background-image: url('triangle.svg');
+  background-repeat: no-repeat;
+  background-size: 150px 200px;
+  content: '';
+  height: 200px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 150px;
+  z-index: -1;
 }
