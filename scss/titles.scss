@@ -4,17 +4,28 @@
   left: 100px;
   position: relative;
   
-  .title-image {
-    height: 200px;
-    width: 150px;
-  }
-
   .title {
+    align-items: center;
+    display: flex;
     font-family: 'Open Sans', sans-serif;
     font-size: 40px;
-    left: -35px;
+    padding-left: 115px;
+    padding-top: 87px;
     position: relative;
     top: 8px;
+  }
+
+  .title::before {
+    background-image: url('triangle.svg');
+    background-repeat: no-repeat;
+    background-size: 150px 200px;
+    content: '';
+    height: 200px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 150px;
+    z-index: -1;
   }
 }
 
