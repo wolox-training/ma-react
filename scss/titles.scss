@@ -2,22 +2,23 @@
   align-items: center;
   display: flex;
   font-family: 'Open Sans', sans-serif;
-  font-size: 40px;
-  padding-left: 115px;
-  padding-top: 87px;
+  font-size: 24px;
+  line-height: 30px;
+  padding-left: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   position: relative;
-  top: 8px;
 }
 
 .title::before {
   background-image: url('triangle.svg');
   background-repeat: no-repeat;
-  background-size: 150px 200px;
+  background-size: 70px 90px;
   content: '';
-  height: 200px;
+  height: 90px;
   left: 0;
   position: absolute;
   top: 0;
-  width: 150px;
+  width: 70px;
   z-index: -1;
 }
