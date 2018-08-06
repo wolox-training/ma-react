@@ -8,17 +8,17 @@
   padding-top: 30px;
   padding-bottom: 30px;
   position: relative;
-}
 
-.title::before {
-  background-image: url('triangle.svg');
-  background-repeat: no-repeat;
-  background-size: 70px 90px;
-  content: '';
-  height: 90px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 70px;
-  z-index: -1;
+  &::before {
+    background-image: url('triangle.svg');
+    background-repeat: no-repeat;
+    background-size: 70px 90px;
+    content: '';
+    height: 90px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 70px;
+    z-index: -1;
+  }
 }
