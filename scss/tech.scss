@@ -1,37 +1,24 @@
 .tech-container {
-  margin-left: 25px;
-  padding-left: 15px;
-  padding-top: 20px;
-  position: relative;
-  top: 100px;
-
-  &::before {
-    border: 2px solid $green;
-    border-radius: 10px;
-    content: '';
-    height: 350px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 260px;
-  }
-}
-
-.tech-container-content {
   align-items: center;
   background-color: $green;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   height: 350px;
-  position: relative;
   width: 260px;
 
   &::before {
-    background-image: url('react_icon.svg');
-    background-repeat: no-repeat;
-    background-size: 100px 100px;
+    border: 2px solid $green;
+    border-radius: 10px;
     content: '';
+    height: 100%;
+    left: -15px;
+    position: relative;
+    top: -20px;
+    width: 100%;
+  }
+
+  .tech-logo {
     height: 100px;
     left: 0;
     position: relative;
@@ -42,7 +29,7 @@
   .tech-title, 
   .tech-release,
   .tech-description {
-    padding-top: 20px;
+    margin-top: 20px;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
   }
