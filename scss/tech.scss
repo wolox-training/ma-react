@@ -20,6 +20,17 @@
     width: 100%;
   }
 
+  &:hover::before {
+    border: 2px solid $green;
+    border-radius: 10px;
+    content: '';
+    height: 350px;
+    left: 30px;
+    position: absolute;
+    top: 30px;
+    width: 260px;
+  }
+
   .tech-logo {
     height: 100px;
     margin-bottom: 20px;
