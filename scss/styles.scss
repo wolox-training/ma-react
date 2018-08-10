@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.title {
+  margin-bottom: 30px;
+}
+
+.techs-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.tech-container {
+  margin: 20px 40px;
+}

@@ -20,6 +20,11 @@
     width: 100%;
   }
 
+  &:hover::before {
+    left: 30px;
+    top: 30px;
+  }
+
   .tech-logo {
     height: 100px;
     margin-bottom: 20px;
