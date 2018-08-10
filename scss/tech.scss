@@ -1,0 +1,45 @@
+.tech-container {
+  align-items: center;
+  background-color: $green;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  min-height: 350px;
+  padding: 10px 10px 30px;
+  position: relative;
+  width: 260px;
+
+  &::before {
+    border: 2px solid $green;
+    border-radius: 10px;
+    content: '';
+    height: 100%;
+    left: -15px;
+    position: absolute;
+    top: -20px;
+    width: 100%;
+  }
+
+  .tech-logo {
+    height: 100px;
+    margin-bottom: 20px;
+    width: 100px;
+  }
+  
+  .tech-title, 
+  .tech-release {
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+  }
+
+  .tech-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .tech-release {
+    font-weight: bold;
+  }
+}
