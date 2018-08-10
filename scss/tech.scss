@@ -5,10 +5,7 @@
   display: flex;
   flex-direction: column;
   height: 350px;
-  padding-bottom: 30px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
+  padding: 10px 10px 30px;
   position: relative;
   width: 260px;
 
@@ -25,25 +22,24 @@
 
   .tech-logo {
     height: 100px;
-    left: 0;
     width: 100px;
   }
   
   .tech-title, 
-  .tech-release,
-  .tech-description {
+  .tech-release {
     margin-bottom: 20px;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
   }
 
-  .tech-release {
-    font-weight: bold;
-    margin-bottom: 30px; 
+  .tech-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    margin: 30px 10px;
+    text-align: center;
   }
 
-  .tech-description {
-    margin: 30px 10px;
-    text-align: center; 
+  .tech-release {
+    font-weight: bold;
   }
 }
