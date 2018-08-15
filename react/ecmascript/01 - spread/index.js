@@ -4,7 +4,9 @@ export function min(...array) {
   if(!isArray(array))
     return array;
   
-  return Math.min(...array);
+  if(array.length > 0)
+    return Math.min(...array);
+  return undefined;
 }
 
 export function copy() {
