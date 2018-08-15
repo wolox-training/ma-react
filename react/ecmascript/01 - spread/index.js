@@ -13,6 +13,10 @@ export function copy() {
 
 }
 
-export function reverseMerge(arr1, arr2) {
+export function reverseMerge() {
   return [...arr2, ...arr1];
+}
+
+export function filterAttribs({a, b, ...c}) {
+  return { ...c};
 }
