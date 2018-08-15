@@ -9,10 +9,10 @@ describe('Promises', () => {
       expect(delayedTime).toBeLessThanOrEqual(TIME + 100);
     }));
 
-  it('delay will not wait if the time is too long', () => delay(TIME * TIME)
+  xit('delay will not wait if the time is too long', () => delay(TIME * TIME)
     .catch(e => expect(e).toEqual(Error('This time is too much !'))));
 
-  xit('asyncDelay also works well', async () => {
+  it('asyncDelay also works well', async () => {
     const delayedTime = await asyncDelay(TIME);
     expect(delayedTime).toBeGreaterThanOrEqual(TIME - 100);
     expect(delayedTime).toBeLessThanOrEqual(TIME + 100);
