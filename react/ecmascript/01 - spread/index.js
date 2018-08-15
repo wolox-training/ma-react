@@ -1,6 +1,6 @@
 import { isArray } from './utils';
 
-export function min(array) {
+export function min(...array) {
   if(!isArray(array))
     return array;
   
