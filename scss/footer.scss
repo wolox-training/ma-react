@@ -1,44 +1,31 @@
 .footer {
-  align-items: center;
   background-color: $blue;
   display: flex;
-  height: 180px;
-  justify-content: space-between;
-  margin-top: 100px;
-  overflow: hidden;
-  width: 100%;
-}
-
-.wolox-logo-footer {
-  height: 70px;
-  position: relative;
-}
-
-.footer-text-bottom {
-  color: white;
-  font-family: 'Roboto', sans-serif;
-  font-size: 12px;
-  top: 60px;
-  position: relative;
-  width: 14%;
-}
-
-.footer-text-center {
-  align-items: center;
-  display: flex;
+  height: 100%;
   flex-direction: column;
-  height: 100px;
-  justify-content: space-between;
-  padding-left: 7%;
-  position: relative;
-  width: 86%;
-}
+  padding-right: 30px;
+  padding-top: 60px;
+  padding-bottom: 10px;
+  width: 100%;
 
-.footer-text-top {
-  color: white;
-  font-size: 24px;
-}
-
-.wolox-logo-footer {
-  height: 60px;
+  .wolox-logo-footer {
+    align-self: center;
+    height: 70px;
+    margin-bottom: 80px;
+  }
+  
+  .footer-text-bottom {
+    align-self: flex-end;
+    color: $white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+  }
+  
+  .footer-text-top {
+    align-self: center;
+    color: $white;
+    font-size: 24px;
+    margin-bottom: 50px;
+    width: auto;
+  }
 }
