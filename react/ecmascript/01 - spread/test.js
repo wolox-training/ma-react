@@ -22,10 +22,10 @@ describe('Spread operator', () => {
 
     expect(example).toEqual(copiedExample);
 
-    /*example.c = 3;
+    example.c = 3;
 
     expect(example).toEqual({ a: 1, b: 2, c: 3 });
-    expect(copiedExample).toEqual({ a: 1, b: 2 });*/
+    expect(copiedExample).toEqual({ a: 1, b: 2 });
   });
   xit('copy can copy arrays', () => {
     const example = [];
