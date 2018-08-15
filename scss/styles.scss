@@ -1,14 +1,88 @@
 .container {
   display: flex;
   flex-direction: column;
-  padding: 100px;
+  padding: 150px;
 }
 
 .title {
   margin-bottom: 30px;
 }
 
-.techs-container {
+.container-frontend {
+  display: grid;
+  grid-template-columns: 260px 260px 260px 260px;
+  grid-template-rows: 120px 10px 350px 350px;
+  grid-template-areas: 
+    "frontend-tools . . ."
+    ". . . ."
+    ". react angular vue"
+    ". react elm polymer";
+  margin-bottom: 100px;
+}
+
+.container-backend {
+  display: grid;
+  grid-template-columns: 260px 260px 260px 260px;
+  grid-template-rows: 120px 10px 350px 350px;
+  grid-template-areas: 
+    "backend-tools . . ."
+    ". . . ."
+    ". rails express aspnet"
+    ". rails django .";
+  margin-bottom: 100px;
+}
+
+.frontend-tools {
+  grid-area: frontend-tools;
+}
+
+.react {
+  align-self: center;
+  grid-area: react;
+}
+
+.angular {
+  border-left: 2px solid $green;
+  grid-area: angular;
+}
+
+.vue {
+  grid-area: vue;
+}
+
+.elm {
+  border-left: 2px solid $green;
+  grid-area: elm;
+}
+
+.polymer {
+  grid-area: polymer;
+}
+
+.backend-tools {
+  grid-area: backend-tools;
+}
+
+.rails {
+  align-self: center;
+  grid-area: rails;
+}
+
+.express {
+  border-left: 2px solid $green;
+  grid-area: express;
+}
+
+.aspnet {
+  grid-area: aspnet;
+}
+
+.django {
+  border-left: 2px solid $green;
+  grid-area: django;
+}
+
+/*.techs-container {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 20px;
@@ -20,4 +94,4 @@
 
 .tech-container {
   margin: 20px 40px;
-}
+}*/
