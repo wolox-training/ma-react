@@ -12,12 +12,5 @@ export function delay(time) {
 }
 
 export async function asyncDelay(time) {
-  return new Promise((resolve, reject) => {
-    if(time < 3000) {
-      resolve(time + 100);
-    } else {
-        let reason = new Error('This time is too much !');
-        reject(reason); // reject
-    }
-  });
+  return delay(time);
 }
