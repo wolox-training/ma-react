@@ -8,26 +8,28 @@
   margin-bottom: 30px;
 }
 
-.container-frontend {
+.grid {
   align-self: center;
   display: grid;
   grid-template-columns: 260px 260px 260px;
   grid-template-rows: 350px 350px;
-  grid-template-areas: 
-    "react angular vue"
-    "react elm polymer";
   margin-bottom: 100px;
 }
 
+.container-frontend {
+  grid-template-areas: 
+    "react angular vue"
+    "react elm polymer";
+}
+
 .container-backend {
-  align-self: center;
-  display: grid;
-  grid-template-columns: 260px 260px 260px;
-  grid-template-rows: 350px 350px;
   grid-template-areas: 
     "rails express aspnet"
     "rails django .";
-  margin-bottom: 100px;
+}
+
+.border-left {
+  border-left: 2px solid $green;
 }
 
 .react {
@@ -36,7 +38,6 @@
 }
 
 .angular {
-  border-left: 2px solid $green;
   grid-area: angular;
 }
 
@@ -45,7 +46,6 @@
 }
 
 .elm {
-  border-left: 2px solid $green;
   grid-area: elm;
 }
 
@@ -59,7 +59,6 @@
 }
 
 .express {
-  border-left: 2px solid $green;
   grid-area: express;
 }
 
@@ -68,6 +67,31 @@
 }
 
 .django {
-  border-left: 2px solid $green;
   grid-area: django;
+}
+
+@media only screen and (max-width: 1024px) {
+  .title {
+    align-self: center;
+  }
+
+  .container-frontend {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  .container-backend {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  .border-left {
+    border-left: 0;
+  }
+
+  .tech-container {
+    border-bottom: 2px solid $green;
+  }
 }
