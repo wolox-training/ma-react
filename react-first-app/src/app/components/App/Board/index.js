@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import PropTypes from 'prop-types';
+
 import logo from '../../../../logo.svg';
 
 import style from './styles.css';
@@ -38,5 +40,9 @@ class Board extends React.Component {
     );
   }
 }
+
+Board.propTypes = {
+  squares: PropTypes.array
+};
 
 export default Board;
