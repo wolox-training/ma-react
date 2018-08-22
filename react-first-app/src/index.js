@@ -6,6 +6,32 @@ import registerServiceWorker from './registerServiceWorker';
 
 import Game from '~components/App'; // eslint-disable-line import/first
 
-ReactDOM.render(<Game />, document.getElementById('root'));
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+
+const initialState = {
+  stepNumber: 0,
+  xIsNext: true
+};
+function reducer(state = initialState, action) {
+  switch(action.type) {
+    case "CHANGE_STEP":
+      return {
+        stepNumber: action.stepNumber,
+        xIsNext : action.xIsNext
+      };
+      default:
+        return state;
+  }
+}
+const store = createStore(reducer);
+
+const App = () => (
+  <Provider store={store}>
+    <Game />
+  </Provider>
+);
+
+ReactDOM.render(<App />, document.getElementById('root'));
 
 registerServiceWorker();

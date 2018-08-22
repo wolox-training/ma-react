@@ -6,6 +6,8 @@ import style from './styles.css';
 
 import Board from '../Board';
 
+import { connect } from 'react-redux';
+
 class Game extends React.Component {
   constructor(props) {
     super(props);
@@ -14,33 +16,45 @@ class Game extends React.Component {
         {
           squares: Array(9).fill(null)
         }
-      ],
+      ]/*,
       stepNumber: 0,
-      xIsNext: true
+      xIsNext: true*/
     };
   }
 
   handleClick(i) {
-    const history = this.state.history.slice(0, this.state.stepNumber + 1);
+    const history = this.state.history.slice(0, this.props.stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
-    squares[i] = this.state.xIsNext ? "X" : "O";
+    squares[i] = this.props.xIsNext ? "X" : "O";
     this.setState({
       history: history.concat([
         {
           squares: squares
         }
-      ]),
+      ])/*,
       stepNumber: history.length,
-      xIsNext: !this.state.xIsNext
+      xIsNext: !this.state.xIsNext*/
+    });
+
+    this.props.dispatch({
+      type: "CHANGE_STATE",
+      stepNumber: history.length,
+      xIsNext: !this.props.xIsNext
     });
   }
 
   jumpTo(step) {
-    this.setState({
+    /*this.setState({
+      stepNumber: step,
+      xIsNext: (step % 2) === 0
+    });*/
+
+    this.props.dispatch({
+      type: "CHANGE_STATE",
       stepNumber: step,
       xIsNext: (step % 2) === 0
     });
@@ -48,7 +62,7 @@ class Game extends React.Component {
 
   render() {
     const history = this.state.history;
-    const current = history[this.state.stepNumber];
+    const current = history[this.props.stepNumber];
     const winner = calculateWinner(current.squares);
 
     const moves = history.map((step, move) => {
@@ -66,7 +80,7 @@ class Game extends React.Component {
     if (winner) {
       status = "Winner: " + winner;
     } else {
-      status = "Next player: " + (this.state.xIsNext ? "X" : "O");
+      status = "Next player: " + (this.props.xIsNext ? "X" : "O");
     }
 
     return (
@@ -106,4 +120,8 @@ function calculateWinner(squares) {
   return null;
 }
 
-export default Game;
+const mapStateToProps = (state) => ({
+  stepNumber: state.stepNumber, 
+  xIsNext: state.xIsNext
+})
+export default connect(mapStateToProps)(Game);
