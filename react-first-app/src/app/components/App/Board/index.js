@@ -30,4 +30,8 @@ class Board extends React.Component {
   }
 }
 
+Board.propTypes = {
+  squares: PropTypes.array
+};
+
 export default Board;
