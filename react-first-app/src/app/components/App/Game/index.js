@@ -9,6 +9,8 @@ import './styles.css';
 
 import { connect } from 'react-redux';
 
+import changeStep from '../../../../redux/tictactoe/actions.js';
+
 class Game extends React.Component {
   constructor(props) {
     super(props);
@@ -18,10 +20,14 @@ class Game extends React.Component {
         {
           squares: Array(9).fill(null)
         }
+<<<<<<< 6dde4c96ff7858e0cf039c479da181d33613d636
       ],
       winner: null,
       stepNumber: 0,
       xIsNext: true
+=======
+      ]
+>>>>>>> redux finished, separated by folders
     };
   }
 
@@ -54,11 +60,7 @@ class Game extends React.Component {
       history: [...history, { squares }],
     });
 
-    this.props.dispatch({
-      type: "CHANGE_STEP",
-      stepNumber: history.length,
-      xIsNext: !this.props.xIsNext
-    });
+    this.props.dispatch(changeStep(history.length, !this.props.xIsNext));
     const winner = calculateWinner(squares);
     if (winner) {
       this.setState({
@@ -68,11 +70,7 @@ class Game extends React.Component {
   }
 
   jumpTo(step) {
-    this.props.dispatch({
-      type: "CHANGE_STEP",
-      stepNumber: step,
-      xIsNext: (step % 2) === 0
-    });
+    this.props.dispatch(changeStep(step, (step % 2) === 0));
   }
 
   render() {
