@@ -8,6 +8,8 @@ import Board from '../Board';
 
 import { connect } from 'react-redux';
 
+import changeStep from '../../../../redux/tictactoe/actions.js';
+
 class Game extends React.Component {
   constructor(props) {
     super(props);
@@ -16,9 +18,7 @@ class Game extends React.Component {
         {
           squares: Array(9).fill(null)
         }
-      ]/*,
-      stepNumber: 0,
-      xIsNext: true*/
+      ]
     };
   }
 
@@ -35,29 +35,14 @@ class Game extends React.Component {
         {
           squares: squares
         }
-      ])/*,
-      stepNumber: history.length,
-      xIsNext: !this.state.xIsNext*/
+      ])
     });
 
-    this.props.dispatch({
-      type: "CHANGE_STEP",
-      stepNumber: history.length,
-      xIsNext: !this.props.xIsNext
-    });
+    this.props.dispatch(changeStep(history.length, !this.props.xIsNext));
   }
 
   jumpTo(step) {
-    /*this.setState({
-      stepNumber: step,
-      xIsNext: (step % 2) === 0
-    });*/
-
-    this.props.dispatch({
-      type: "CHANGE_STEP",
-      stepNumber: step,
-      xIsNext: (step % 2) === 0
-    });
+    this.props.dispatch(changeStep(step, (step % 2) === 0));
   }
 
   render() {
