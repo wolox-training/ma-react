@@ -52,6 +52,10 @@ class Game extends React.Component {
     squares[i] = this.state.xIsNext ? SQUARE_VALUES.X : SQUARE_VALUES.O;
     this.setState({
       history: [...history, { squares }],
+    });
+
+    this.props.dispatch({
+      type: "CHANGE_STEP",
       stepNumber: history.length,
       xIsNext: !this.props.xIsNext
     });
@@ -65,7 +69,7 @@ class Game extends React.Component {
 
   jumpTo(step) {
     this.props.dispatch({
-      type: "CHANGE_STATE",
+      type: "CHANGE_STEP",
       stepNumber: step,
       xIsNext: (step % 2) === 0
     });
@@ -135,7 +139,7 @@ function calculateWinner(squares) {
 }
 
 const mapStateToProps = (state) => ({
-  stepNumber: state.stepNumber, 
+  stepNumber: state.stepNumber,
   xIsNext: state.xIsNext
-})
+});
 export default connect(mapStateToProps)(Game);

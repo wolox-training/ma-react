@@ -1,18 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+import { Provider, connect } from 'react-redux';
 
 import './scss/index.scss';
-import registerServiceWorker from './registerServiceWorker';
 
 import Game from '~components/App/Game'; // eslint-disable-line import/first
 
-import { createStore } from "redux";
-import { Provider } from "react-redux";
+import registerServiceWorker from './registerServiceWorker';
 
 const initialState = {
   stepNumber: 0,
   xIsNext: true
 };
+
 function reducer(state = initialState, action) {
   switch(action.type) {
     case "CHANGE_STEP":
@@ -24,7 +25,9 @@ function reducer(state = initialState, action) {
         return state;
   }
 }
-const store = createStore(reducer);
+const store = createStore(reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 const App = () => (
   <Provider store={store}>
