@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+import { Provider, connect } from 'react-redux';
 
 import './scss/index.scss';
-import registerServiceWorker from './registerServiceWorker';
 
 import Game from '~components/App'; // eslint-disable-line import/first
 
-import { createStore } from "redux";
-import { Provider } from "react-redux";
+import registerServiceWorker from './registerServiceWorker';
 
 const initialState = {
   stepNumber: 0,

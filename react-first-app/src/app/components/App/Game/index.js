@@ -88,7 +88,7 @@ class Game extends React.Component {
         <div className="game-board">
           <Board
             squares={current.squares}
-            onClick={i => this.handleClick(i)}
+            onClick={(i) => this.handleClick(i)}
           />
         </div>
         <div className="game-info">
@@ -121,7 +121,7 @@ function calculateWinner(squares) {
 }
 
 const mapStateToProps = (state) => ({
-  stepNumber: state.stepNumber, 
+  stepNumber: state.stepNumber,
   xIsNext: state.xIsNext
-})
+});
 export default connect(mapStateToProps)(Game);
