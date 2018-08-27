@@ -1,0 +1,35 @@
+.footer {
+  align-items: center;
+  background-color: $blue;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 30px 10px;
+  
+  .wolox-logo-footer {
+    height: 70px;
+    margin-bottom: 80px;
+  }
+  
+  .footer-text-bottom {
+    align-self: flex-end;
+    color: $white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+  }
+  
+  .footer-text-top {
+    color: $white;
+    font-size: 24px;
+    margin-bottom: 50px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .footer .footer-text-bottom {
+    align-self: center;
+  }
+
+  .footer {
+    padding-bottom: 60px;
+  }
+}

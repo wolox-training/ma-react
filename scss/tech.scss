@@ -1,0 +1,32 @@
+.tech-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 350px;
+  padding: 30px 50px;
+  position: relative;
+  width: 260px;
+  
+  .tech-logo {
+    height: 100px;
+    margin-bottom: 20px;
+    width: 100px;
+  }
+  
+  .tech-title, 
+  .tech-release {
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+  }
+
+  .tech-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .tech-release {
+    font-weight: bold;
+  }
+}
