@@ -1,15 +1,25 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import logo from '../../../../logo.svg';
+import './styles.css';
 
-import style from './styles.css';
+class Square extends Component {
+  handleClick = () => this.props.onClick(this.props.index);
 
-function Square({ value, onClick }) {
-  return (
-    <button className="square" onClick={onClick}>
-      {value}
-    </button>
-  );
+  render() {
+    const { value } = this.props;
+    return (
+      <button className="square" onClick={this.handleClick}>
+        {value}
+      </button>
+    );
+  }
 }
+
+Square.propTypes = {
+  value: PropTypes.string,
+  onClick: PropTypes.func,
+  index: PropTypes.number
+};
 
 export default Square;
