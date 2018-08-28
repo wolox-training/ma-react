@@ -4,10 +4,10 @@ import logo from '../../../../logo.svg';
 
 import style from './styles.css';
 
-function Square(props) {
+function Square({ value, onClick }) {
   return (
-    <button className="square" onClick={props.onClick}>
-      {props.value}
+    <button className="square" onClick={onClick}>
+      {value}
     </button>
   );
 }

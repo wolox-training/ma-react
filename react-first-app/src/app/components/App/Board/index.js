@@ -7,32 +7,25 @@ import style from './styles.css';
 import Square from '../Square';
 
 class Board extends React.Component {
-  renderSquare(i) {
-    return (
-      <Square
-        value={this.props.squares[i]}
-        onClick={() => this.props.onClick(i)}
-      />
-    );
-  }
+  handleClick = i => this.props.onClick(i);
 
   render() {
     return (
       <div>
         <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
+          <Square value={this.props.squares[0]} onClick={() => this.handleClick(0)}/>
+          <Square value={this.props.squares[1]} onClick={() => this.handleClick(1)}/>
+          <Square value={this.props.squares[2]} onClick={() => this.handleClick(2)}/>
         </div>
         <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
+          <Square value={this.props.squares[3]} onClick={() => this.handleClick(3)}/>
+          <Square value={this.props.squares[4]} onClick={() => this.handleClick(4)}/>
+          <Square value={this.props.squares[5]} onClick={() => this.handleClick(5)}/>
         </div>
         <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
+          <Square value={this.props.squares[6]} onClick={() => this.handleClick(6)}/>
+          <Square value={this.props.squares[7]} onClick={() => this.handleClick(7)}/>
+          <Square value={this.props.squares[8]} onClick={() => this.handleClick(8)}/>
         </div>
       </div>
     );
