@@ -1,0 +1,16 @@
+{
+  "presets": [
+    "react-app",
+    "es2015"
+  ],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "~components": "./src/app/components",
+        "~screens": "./src/app/screens",
+        "~redux": "./src/redux"
+      }
+    }]
+  ]
+}
