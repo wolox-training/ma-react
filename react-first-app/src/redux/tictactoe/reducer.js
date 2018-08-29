@@ -8,7 +8,7 @@ export default function reducer(state = initialState, action) {
     case "CHANGE_STEP":
       return {
         stepNumber: action.stepNumber,
-        xIsNext : action.xIsNext
+        xIsNext: action.xIsNext
       };
       default:
         return state;
