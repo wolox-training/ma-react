@@ -8,6 +8,11 @@
     "wolox-react-scripts": "1.2.1"
   },
   "scripts": {
+    "lint": "eslint src",
+    "lint-fix": "eslint src --fix",
+    "lint-diff": "git diff --name-only --cached --relative | grep \\.js$ | xargs eslint",
+    "precommit": "npm test",
+    "prepush": "npm test",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
