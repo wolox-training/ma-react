@@ -4,10 +4,17 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import RegisterForm from './login.js';
+import { SubmissionError } from 'redux-form';
 
 class LoginContainer extends React.Component {
   submit = values => {
-    window.alert(JSON.stringify(values.password, null, 4));
+    if (['kent@gmail.com', 'andy@gmail.com', 'john@gmail.com', 'joel@gmail.com'].includes(values.email)) {
+      window.alert(JSON.stringify(values, null, 4));
+    } else {
+      throw new SubmissionError({
+        email: 'Email not registered'
+      });
+    }
   };
 
   render() {
