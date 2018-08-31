@@ -104,7 +104,7 @@ class Game extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  stepNumber: state.stepNumber,
-  xIsNext: state.xIsNext
+  stepNumber: state.tictactoe.stepNumber,
+  xIsNext: state.tictactoe.xIsNext
 });
 export default connect(mapStateToProps)(Game);
