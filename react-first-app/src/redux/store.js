@@ -1,9 +1,14 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import reducer from './tictactoe/reducers/index.js';
+import { browserHistory } from 'react-router';
+import { routerMiddleware, push } from 'react-router-redux';
 
+const middleware = routerMiddleware(browserHistory)
 const store = createStore(
   reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  applyMiddleware(thunk),
+  applyMiddleware(middleware)
 );
 
 export default store;
