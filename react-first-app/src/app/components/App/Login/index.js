@@ -7,7 +7,7 @@ import RegisterForm from './login.js';
 
 class LoginContainer extends React.Component {
   submit = values => {
-    window.alert(JSON.stringify(values, null, 4));
+    window.alert(JSON.stringify(values.password, null, 4));
   };
 
   render() {

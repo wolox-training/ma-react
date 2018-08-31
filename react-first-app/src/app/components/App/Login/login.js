@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { customInput, customSelect } from './fields/index.js';
+import { validate } from './validation';
 
 class RegisterForm extends Component {
   render() {
@@ -8,30 +9,26 @@ class RegisterForm extends Component {
     return (
       <form onSubmit={handleSubmit}>
         <Field
-          name="name"
+          name="email"
           component={customInput}
           type="text"
-          label="Name"
+          label="Email"
         />
         <Field
-          name="preference"
-          component={customSelect}
-          label="Preferred Formatting"
-        />
-        <Field
-          name="newsletter"
+          name="password"
           component={customInput}
-          type="checkbox"
-          label="Sign up to Newsletter?"
+          type="password"
+          label="Password"
         />
-        <button type="submit">Submit</button>
+        <button type="submit">Log in</button>
       </form>
     );
   }
 }
 
 RegisterForm = reduxForm({
-  form: 'register'
+  form: 'register',
+  validate
 })(RegisterForm);
 
 export default RegisterForm;
