@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-import reducer from './tictactoe/reducer.js';
+import reducer from './tictactoe/reducers/index.js';
 
 const store = createStore(
   reducer,
