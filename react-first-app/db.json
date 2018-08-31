@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "email": "marcos.atar@wolox.com.ar",
+      "password": "marcosatar"
+    },
+    {
+      "email": "steve@wolox.com.ar",
+      "password": "steve1234"
+    }
+  ]
+}
