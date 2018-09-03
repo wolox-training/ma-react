@@ -7,22 +7,29 @@ import RegisterForm from './login.js';
 import { SubmissionError } from 'redux-form';
 import {create} from 'apisauce';
 import store from '../../../../redux/store';
+import Redirect from 'react-router-dom/Redirect';
 
 class LoginContainer extends React.Component {
   submit = values => {
 
-    store.dispatch(thunkCheckIfUserExists(values.email, values.password));
+    //store.dispatch(thunkCheckIfUserExists(values.email, values.password));
+
+
     // define the api
-    /*const api = create({
+    const api = create({
       baseURL: 'http://localhost:4000',
       headers: {'Accept': 'application/vnd.github.v3+json'}
     })
 
     // start making calls
     api
-      .get('/users')
-      .then((response) => response.data[0].name)
-      .then(console.log)*/
+      .get(`/users?email=${values.email}&password=${values.password}`)
+      .then((response) => {
+        if(response.data[0])
+          window.location.replace("/");
+        else
+          window.alert("User or password is incorrect");
+      });
 
     /*api.post('/users', {id: 2, name: 'Steve', email: 'steve@gmail.com'}, {headers: {'x-gigawatts': '1.21'}})*/
     /*if (['kent@gmail.com', 'andy@gmail.com', 'john@gmail.com', 'joel@gmail.com'].includes(values.email)) {
