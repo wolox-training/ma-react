@@ -5,3 +5,10 @@ export default function changeStep(int, bool) {
       xIsNext: bool
   };
 }
+
+/*export default function loginSuccess() {
+  return {
+    type: 'LOGIN_SUCCESS', 
+    payload: { user: response.data } }
+  };
+}*/
