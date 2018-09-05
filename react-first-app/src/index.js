@@ -8,8 +8,6 @@ import store from './redux/store';
 import Game from '~components/App/Game';
 import LoginContainer from '~components/App/Login/index.js';
 
-
-
 const App = () => (
   <Provider store={store}>
     <Router>

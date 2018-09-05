@@ -8,17 +8,17 @@ import { SubmissionError } from 'redux-form';
 import {create} from 'apisauce';
 import store from '../../../../redux/store';
 import Redirect from 'react-router-dom/Redirect';
-import { routerMiddleware, push } from 'react-router-redux'
+import { push } from 'react-router-redux';
 import './login.css';
 
 class LoginContainer extends React.Component {
   submit = values => {
 
-    store.dispatch(thunkCheckIfUserExists(values.email, values.password));
+    //store.dispatch(thunkCheckIfUserExists(values.email, values.password));
 
 
-    // define the api
-    /*const api = create({
+    /*// define the api
+    const api = create({
       baseURL: 'http://localhost:4000',
       headers: {'Accept': 'application/vnd.github.v3+json'}
     })
@@ -62,10 +62,13 @@ function thunkCheckIfUserExists(email, password) {
   return async dispatch => {
     dispatch({ type: 'LOGIN' });
     const response = await checkIfUserExists(email, password);
-    if (response.ok) {
+    if (response.ok && response.data.length > 0) {
       dispatch({ type: 'LOGIN_SUCCESS', payload: { user: response.data } });
+      window.location.replace("/");
+      //dispatch(push('/'));
     } else {
       dispatch({ type: 'LOGIN_FAILURE', payload: { error: response.error } });
+      alert("User or password is incorrect");
     }
     
     /*.then(

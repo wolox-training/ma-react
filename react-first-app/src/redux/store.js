@@ -3,6 +3,9 @@ import thunk from 'redux-thunk';
 import reducer from './tictactoe/reducers/index.js';
 import { browserHistory } from 'react-router';
 import { routerMiddleware, push } from 'react-router-redux';
+import createHistory from 'history/createBrowserHistory';
+
+const history = createHistory();
 
 const middlewares = [thunk, routerMiddleware(history)]; // routerMiddleware si tenes react-router-redux
 const enhancers = [applyMiddleware(...middlewares)];
