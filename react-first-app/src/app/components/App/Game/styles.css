@@ -15,7 +15,13 @@ Backtrace:
 /usr/lib/ruby/vendor_ruby/sass/exec/base.rb:19:in `parse!'
 /usr/bin/sass:8:in `<main>'
 */
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: ""; }
+body {
+  padding-top: 200px;
+  background-color: rgb(173, 226, 166);
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

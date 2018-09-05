@@ -7,3 +7,10 @@ export default function changeStep(stepNumber, xIsNext) {
       }
   };
 }
+
+/*export default function loginSuccess() {
+  return {
+    type: 'LOGIN_SUCCESS', 
+    payload: { user: response.data } }
+  };
+}*/
