@@ -1,7 +1,9 @@
-export default function changeStep(int, bool) {
+export default function changeStep(stepNumber, xIsNext) {
   return {
       type: 'CHANGE_STEP',
-      stepNumber: int,
-      xIsNext: bool
+      payload: {
+        stepNumber,
+        xIsNext
+      }
   };
 }

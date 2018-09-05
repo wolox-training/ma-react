@@ -7,8 +7,8 @@ export default function reducer(state = initialState, action) {
   switch(action.type) {
     case "CHANGE_STEP":
       return {
-        stepNumber: action.stepNumber,
-        xIsNext: action.xIsNext
+        stepNumber: action.payload.stepNumber,
+        xIsNext: action.payload.xIsNext
       };
       default:
         return state;
