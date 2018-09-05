@@ -12,7 +12,7 @@ const App = () => (
   <Provider store={store}>
     <Router>
       <div>
-        <Route exact path="/" component={Game} />
+                <Route exact path="/" component={Game} />
         <Route path="/login" component={LoginContainer} />
       </div>
     </Router>

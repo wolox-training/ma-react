@@ -12,37 +12,6 @@ import { push } from 'react-router-redux';
 import './login.css';
 
 class LoginContainer extends React.Component {
-  submit = values => {
-
-    //store.dispatch(thunkCheckIfUserExists(values.email, values.password));
-
-
-    /*// define the api
-    const api = create({
-      baseURL: 'http://localhost:4000',
-      headers: {'Accept': 'application/vnd.github.v3+json'}
-    })
-
-    // start making calls
-    api
-      .get(`/users?email=${values.email}&password=${values.password}`)
-      .then((response) => {
-        if(response.data[0])
-          window.location.replace("/");
-        else
-          window.alert("User or password is incorrect");
-      });*/
-
-    /*api.post('/users', {id: 2, name: 'Steve', email: 'steve@gmail.com'}, {headers: {'x-gigawatts': '1.21'}})*/
-    /*if (['kent@gmail.com', 'andy@gmail.com', 'john@gmail.com', 'joel@gmail.com'].includes(values.email)) {
-      window.alert(JSON.stringify(values, null, 4));
-    } else {
-      throw new SubmissionError({
-        email: 'Email not registered'
-      });
-    }*/
-  };
-
   render() {
     return <RegisterForm onSubmit={this.props.onSubmit} />;
   }
@@ -70,11 +39,6 @@ function thunkCheckIfUserExists(email, password) {
       dispatch({ type: 'LOGIN_FAILURE', payload: { error: response.error } });
       alert("User or password is incorrect");
     }
-    
-    /*.then(
-      user => store.dispatch(push("/")),
-      error => window.alert('Email or password is incorrect')
-    );*/
   };
 }
 
