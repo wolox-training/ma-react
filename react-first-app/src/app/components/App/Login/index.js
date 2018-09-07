@@ -14,8 +14,8 @@ class LoginContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  logged: state.login.logged,
-  user: state.login.user
+  logged: state.logged,
+  user: state.user
 });
 
 const mapDispatchToProps = dispatch => ({

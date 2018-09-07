@@ -10,7 +10,14 @@ export default function tictactoe(state = initialState, action) {
         stepNumber: action.payload.stepNumber,
         xIsNext: action.payload.xIsNext
       };
-    case 'LOGIN_SUCCESS':
+      break;
+    case "RESET_GAME":
+    return {
+      stepNumber: 0,
+      xIsNext: true
+    };
+    break;
+  case "LOGIN_SUCCESS":
       return {
         ...state,
         logged: 'yes'

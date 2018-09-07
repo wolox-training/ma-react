@@ -12,7 +12,7 @@ import './styles.css';
 
 import { connect } from 'react-redux';
 
-import changeStep from '../../../../redux/tictactoe/actions.js';
+import { changeStep, resetGame } from '../../../../redux/tictactoe/actions.js';
 
 import NavBar from '~components/App/Navbar';
 
@@ -28,6 +28,10 @@ class Game extends React.Component {
       ],
       winner: null
     };
+  }
+
+  componentWillUnmount() {
+    this.props.dispatch(resetGame());
   }
 
   getStatus() {
@@ -90,11 +94,14 @@ class Game extends React.Component {
   }
 }
 
+<<<<<<< 8de10c2cc88d5c96dc681b1eaa63110200e0d490
 Game.propTypes = {
   xIsNext: PropTypes.bool,
   stepNumber: PropTypes.number
 };
 
+=======
+>>>>>>> topbar finished, still is missing the rebase with routing1
 const mapStateToProps = state => ({
   stepNumber: state.tictactoe.stepNumber,
   xIsNext: state.tictactoe.xIsNext
