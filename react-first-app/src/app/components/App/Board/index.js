@@ -1,10 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import logo from '../../../../logo.svg';
-
-import style from './styles.css';
-
 import Square from '../Square';
 
 class Board extends React.Component {

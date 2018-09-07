@@ -4,13 +4,13 @@ const initialState = {
 };
 
 export default function reducer(state = initialState, action) {
-  switch(action.type) {
-    case "CHANGE_STEP":
+  switch (action.type) {
+    case 'CHANGE_STEP':
       return {
         stepNumber: action.payload.stepNumber,
         xIsNext: action.payload.xIsNext
       };
-      default:
-        return state;
+    default:
+      return state;
   }
 }
