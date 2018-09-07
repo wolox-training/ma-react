@@ -1,8 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import Board from '../Board';
 import { SQUARE_VALUES } from '../constants';
 import { calculateWinner } from '../utils';
+import changeStep from '../../../../redux/tictactoe/actions.js';
 
 import { getDesc } from './utils';
 import './styles.css';
@@ -17,42 +20,33 @@ class Game extends React.Component {
           squares: Array(9).fill(null)
         }
       ],
-      winner: null,
-      stepNumber: 0,
-      xIsNext: true
+      winner: null
     };
   }
 
   getStatus() {
-    const history = this.state.history.slice(0, this.state.stepNumber + 1);
+    const history = this.state.history.slice(0, this.props.stepNumber + 1);
     const current = history[history.length - 1];
     const squares = [...current.squares];
     if (calculateWinner(squares)) {
       return `Winner: ${this.state.winner}`;
     }
-    return `Next player: ${this.state.xIsNext ? SQUARE_VALUES.X : SQUARE_VALUES.O}`;
-  }
-
-  jumpTo(step) {
-    this.setState({
-      stepNumber: step,
-      xIsNext: step % 2 === 0
-    });
+    return `Next player: ${this.props.xIsNext ? SQUARE_VALUES.X : SQUARE_VALUES.O}`;
   }
 
   handleClick(i) {
-    const history = this.state.history.slice(0, this.state.stepNumber + 1);
+    const history = this.state.history.slice(0, this.props.stepNumber + 1);
     const current = history[history.length - 1];
     const squares = [...current.squares];
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
-    squares[i] = this.state.xIsNext ? SQUARE_VALUES.X : SQUARE_VALUES.O;
+    squares[i] = this.props.xIsNext ? SQUARE_VALUES.X : SQUARE_VALUES.O;
     this.setState({
-      history: [...history, { squares }],
-      stepNumber: history.length,
-      xIsNext: !this.state.xIsNext
+      history: [...history, { squares }]
     });
+
+    this.props.dispatch(changeStep(history.length, !this.props.xIsNext));
     const winner = calculateWinner(squares);
     if (winner) {
       this.setState({
@@ -61,9 +55,13 @@ class Game extends React.Component {
     }
   }
 
+  jumpTo(step) {
+    this.props.dispatch(changeStep(step, step % 2 === 0));
+  }
+
   render() {
     const history = this.state.history;
-    const current = history[this.state.stepNumber];
+    const current = history[this.props.stepNumber];
 
     return (
       <div className="game">
@@ -85,4 +83,13 @@ class Game extends React.Component {
   }
 }
 
-export default Game;
+Game.propTypes = {
+  xIsNext: PropTypes.bool,
+  stepNumber: PropTypes.number
+};
+
+const mapStateToProps = state => ({
+  stepNumber: state.stepNumber,
+  xIsNext: state.xIsNext
+});
+export default connect(mapStateToProps)(Game);
