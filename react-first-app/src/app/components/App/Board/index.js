@@ -30,8 +30,8 @@ class Board extends React.Component {
 }
 
 Board.propTypes = {
-  onClick: PropTypes.func,
-  squares: PropTypes.arrayOf(PropTypes.string)
+  onClick: PropTypes.func.isRequired,
+  squares: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default Board;
