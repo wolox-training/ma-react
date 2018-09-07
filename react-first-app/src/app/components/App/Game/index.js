@@ -1,15 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import Board from '../Board';
 import { SQUARE_VALUES } from '../constants';
 import { calculateWinner } from '../utils';
+import changeStep from '../../../../redux/tictactoe/actions.js';
 
 import { getDesc } from './utils';
 import './styles.css';
-
-import { connect } from 'react-redux';
-
-import changeStep from '../../../../redux/tictactoe/actions.js';
 
 class Game extends React.Component {
   constructor(props) {
@@ -44,7 +43,7 @@ class Game extends React.Component {
     }
     squares[i] = this.props.xIsNext ? SQUARE_VALUES.X : SQUARE_VALUES.O;
     this.setState({
-      history: [...history, { squares }],
+      history: [...history, { squares }]
     });
 
     this.props.dispatch(changeStep(history.length, !this.props.xIsNext));
@@ -57,13 +56,13 @@ class Game extends React.Component {
   }
 
   jumpTo(step) {
-    this.props.dispatch(changeStep(step, (step % 2) === 0));
+    this.props.dispatch(changeStep(step, step % 2 === 0));
   }
 
   render() {
     const history = this.state.history;
     const current = history[this.props.stepNumber];
-    
+
     return (
       <div className="game">
         <div className="game-board">
@@ -84,8 +83,14 @@ class Game extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+Game.propTypes = {
+  xIsNext: PropTypes.bool,
+  stepNumber: PropTypes.number
+};
+
+const mapStateToProps = state => ({
   stepNumber: state.tictactoe.stepNumber,
   xIsNext: state.tictactoe.xIsNext
 });
+
 export default connect(mapStateToProps)(Game);

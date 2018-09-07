@@ -3,20 +3,13 @@ const initialState = {
   xIsNext: true
 };
 
-export default function tictactoe(state = initialState, action) {
+export default function reducer(state = initialState, action) {
   switch (action.type) {
     case 'CHANGE_STEP':
       return {
         stepNumber: action.payload.stepNumber,
         xIsNext: action.payload.xIsNext
       };
-      break;
-    case 'LOGIN_SUCCESS':
-      return {
-        ...state,
-        logged: 'yes'
-      };
-      break;
     default:
       return state;
   }

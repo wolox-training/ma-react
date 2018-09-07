@@ -3,12 +3,14 @@ import { connect } from 'react-redux';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-import RegisterForm from './login.js';
 import { SubmissionError } from 'redux-form';
-import {create} from 'apisauce';
-import store from '../../../../redux/store';
+import { create } from 'apisauce';
 import Redirect from 'react-router-dom/Redirect';
 import { push } from 'react-router-redux';
+
+import store from '../../../../redux/store';
+
+import RegisterForm from './login.js';
 import './login.css';
 
 class LoginContainer extends React.Component {
@@ -20,12 +22,12 @@ class LoginContainer extends React.Component {
 const checkIfUserExists = async (email, password) => {
   const api = create({
     baseURL: 'http://localhost:4000',
-    headers: {'Accept': 'application/vnd.github.v3+json'}
-  })
+    headers: { Accept: 'application/vnd.github.v3+json' }
+  });
 
   // start making calls
   return api.get(`/users?email=${email}&password=${password}`);
-}
+};
 
 function thunkCheckIfUserExists(email, password) {
   return async dispatch => {
@@ -33,16 +35,16 @@ function thunkCheckIfUserExists(email, password) {
     const response = await checkIfUserExists(email, password);
     if (response.ok && response.data.length > 0) {
       dispatch({ type: 'LOGIN_SUCCESS', payload: { user: response.data } });
-      window.location.replace("/");
-      //dispatch(push('/'));
+      window.location.replace('/');
+      // dispatch(push('/'));
     } else {
       dispatch({ type: 'LOGIN_FAILURE', payload: { error: response.error } });
-      alert("User or password is incorrect");
+      alert('User or password is incorrect');
     }
   };
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   stepNumber: state.tictactoe.stepNumber,
   xIsNext: state.tictactoe.xIsNext
 });
@@ -53,4 +55,7 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoginContainer);

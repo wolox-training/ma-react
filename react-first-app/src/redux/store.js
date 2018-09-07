@@ -1,9 +1,10 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import reducer from './tictactoe/reducers/index.js';
 import { browserHistory } from 'react-router';
 import { routerMiddleware, push } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
+
+import reducer from './tictactoe/reducers/index.js';
 
 const history = createHistory();
 
