@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import Board from '../Board';
 import { SQUARE_VALUES } from '../constants';
@@ -81,6 +82,11 @@ class Game extends React.Component {
     );
   }
 }
+
+Game.propTypes = {
+  xIsNext: PropTypes.bool,
+  stepNumber: PropTypes.number
+};
 
 const mapStateToProps = state => ({
   stepNumber: state.stepNumber,
