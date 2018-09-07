@@ -17,11 +17,6 @@ export default function tictactoe(state = initialState, action) {
       xIsNext: true
     };
     break;
-  case "LOGIN_SUCCESS":
-      return {
-        ...state,
-        logged: 'yes'
-      };
     default:
       return state;
   }

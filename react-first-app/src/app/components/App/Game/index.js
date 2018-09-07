@@ -5,12 +5,9 @@ import PropTypes from 'prop-types';
 import Board from '../Board';
 import { SQUARE_VALUES } from '../constants';
 import { calculateWinner } from '../utils';
-import changeStep from '../../../../redux/tictactoe/actions.js';
 
 import { getDesc } from './utils';
 import './styles.css';
-
-import { connect } from 'react-redux';
 
 import { changeStep, resetGame } from '../../../../redux/tictactoe/actions.js';
 
@@ -94,14 +91,11 @@ class Game extends React.Component {
   }
 }
 
-<<<<<<< 8de10c2cc88d5c96dc681b1eaa63110200e0d490
 Game.propTypes = {
   xIsNext: PropTypes.bool,
   stepNumber: PropTypes.number
 };
 
-=======
->>>>>>> topbar finished, still is missing the rebase with routing1
 const mapStateToProps = state => ({
   stepNumber: state.tictactoe.stepNumber,
   xIsNext: state.tictactoe.xIsNext

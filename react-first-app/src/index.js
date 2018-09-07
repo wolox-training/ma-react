@@ -7,12 +7,9 @@ import LoginContainer from '~components/App/Login/index.js';
 
 import Game from '~components/App/Game';
 
-import './scss/index.scss';
 import registerServiceWorker from './registerServiceWorker';
 import store from './redux/store';
-import Game from '~components/App/Game';
 import CreativityView from '~components/App/Creativity';
-import LoginContainer from '~components/App/Login/index.js';
 
 const App = () => (
   <Provider store={store}>

@@ -1,4 +1,4 @@
-import { create } from 'redux';
+import { create } from 'apisauce';
 
 const checkIfUserExists = async (email, password) => {
   const api = create({

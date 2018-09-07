@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { create } from 'apisauce';
 import PropTypes from 'prop-types';
 
 import RegisterForm from './login.js';
