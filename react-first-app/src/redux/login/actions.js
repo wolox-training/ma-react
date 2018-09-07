@@ -10,14 +10,13 @@ const checkIfUserExists = async (email, password) => {
   return api.get(`/users?email=${email}&password=${password}`);
 };
 
-export default function thunkCheckIfUserExists(email, password) {
+export function thunkCheckIfUserExists(email, password) {
   return async dispatch => {
     dispatch({ type: 'LOGIN' });
     const response = await checkIfUserExists(email, password);
     if (response.ok && response.data.length > 0) {
       dispatch({ type: 'LOGIN_SUCCESS', payload: { user: response.data } });
-      window.location.replace('/');
-      // dispatch(push('/'));
+      window.location.replace("/tictactoe");
     } else {
       dispatch({ type: 'LOGIN_FAILURE', payload: { error: response.error } });
       alert('User or password is incorrect');

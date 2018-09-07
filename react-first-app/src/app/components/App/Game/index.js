@@ -10,6 +10,12 @@ import changeStep from '../../../../redux/tictactoe/actions.js';
 import { getDesc } from './utils';
 import './styles.css';
 
+import { connect } from 'react-redux';
+
+import changeStep from '../../../../redux/tictactoe/actions.js';
+
+import NavBar from '~components/App/Navbar';
+
 class Game extends React.Component {
   constructor(props) {
     super(props);
@@ -65,6 +71,7 @@ class Game extends React.Component {
 
     return (
       <div className="game">
+        <NavBar />
         <div className="game-board">
           <Board squares={current.squares} onClick={this.handleClick} />
         </div>
