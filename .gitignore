@@ -3,5 +3,5 @@ application.css.map
 .sass-cache/
 ./react-first-app/node_modules
 ./react/ecmascript/node_modules
-./node_modules
+node_modules/
 
