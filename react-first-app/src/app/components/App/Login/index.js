@@ -1,14 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Provider } from 'react-redux';
-import { createStore, combineReducers } from 'redux';
-import { reducer as formReducer } from 'redux-form';
-import { SubmissionError } from 'redux-form';
 import { create } from 'apisauce';
-import Redirect from 'react-router-dom/Redirect';
-import { push } from 'react-router-redux';
-
-import store from '../../../../redux/store';
+import PropTypes from 'prop-types';
 
 import RegisterForm from './login.js';
 import './login.css';
@@ -54,6 +47,10 @@ const mapDispatchToProps = dispatch => ({
     dispatch(thunkCheckIfUserExists(values.email, values.password));
   }
 });
+
+LoginContainer.propTypes = {
+  onSubmit: PropTypes.func.isRequired
+};
 
 export default connect(
   mapStateToProps,

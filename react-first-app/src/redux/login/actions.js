@@ -1,3 +1,5 @@
+import { create } from 'redux';
+
 const checkIfUserExists = async (email, password) => {
   const api = create({
     baseURL: 'http://localhost:4000',
